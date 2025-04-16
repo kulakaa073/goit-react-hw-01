@@ -1,12 +1,16 @@
 import FriendListItem from '/src/componnents/FriendListItem/FriendListItem';
+import css from './FriendList.module.css';
 
 export default function FriendList({ friends }) {
   return (
-    <ul>
+    <ul className={css.container}>
       {friends.map(({ id, avatar, name, isOnline }) => (
-        <li key={id}>
-          <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
-        </li>
+        <FriendListItem
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
+        />
       ))}
     </ul>
   );
