@@ -5,12 +5,9 @@ export default function FriendList({ friends }) {
   return (
     <ul className={css.container}>
       {friends.map(({ id, avatar, name, isOnline }) => (
-        <FriendListItem
-          key={id}
-          avatar={avatar}
-          name={name}
-          isOnline={isOnline}
-        />
+        <li key={id}>
+          <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
+        </li>
       ))}
     </ul>
   );
